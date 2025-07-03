@@ -26,12 +26,12 @@ export default function ChatbotsPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header Placeholder */}
-      <header className="bg-card/80 backdrop-blur-md shadow-sm sticky top-0 z-40 border-b border-border">
-        <div className="container mx-auto px-6 py-3 flex justify-between items-center">
+      <header className="bg-white backdrop-blur-md shadow-sm sticky top-0 z-40">
+        <div className="container mx-auto px-6 py-4 md:py-6 flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold text-primary hover:text-primary-dark transition-colors duration-300">
             Cosmo<span className="text-secondary">Tech</span>
           </Link>
-          <Link href="/#contact" className="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-sm">
+          <Link href="/#contact" className="bg-[#555CBCFF] text-white font-semibold py-2 px-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-sm">
               Contáctanos
           </Link>
         </div>
@@ -77,7 +77,7 @@ export default function ChatbotsPage() {
             <section className="py-12 md:py-16 text-center">
               <h3 className="text-2xl md:text-3xl font-semibold mb-4 text-primary-dark animate-fade-in-up">¿Por qué n8n para tus Chatbots?</h3>
               <p className="max-w-3xl mx-auto text-muted-foreground mb-10 md:mb-12 animate-fade-in-up" style={{animationDelay: '0.1s'}}>
-                n8n es una herramienta de automatización de código abierto ("fair-code") que permite conectar visualmente cualquier aplicación con una API. Esto nos da una flexibilidad sin precedentes para construir chatbots altamente personalizados, integrados y potentes de manera eficiente, sin las limitaciones de plataformas cerradas.
+                n8n es una herramienta de automatización de código abierto que permite conectar visualmente cualquier aplicación con una API. Esto nos da una flexibilidad sin precedentes para construir chatbots altamente personalizados, integrados y potentes de manera eficiente, sin las limitaciones de plataformas cerradas.
               </p>
               <div className="animate-fade-in-up flex flex-col items-center" style={{animationDelay: '0.2s'}}>
                 <div className="relative w-48 h-48 mb-4"> {/* Container for n8n logo */}
@@ -99,7 +99,7 @@ export default function ChatbotsPage() {
             <section className="text-center mt-12 md:mt-16 mb-8 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
               <Link
                 href="/#contact"
-                className="bg-accent hover:bg-accent-dark text-white font-bold py-3.5 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-base"
+                className="bg-[#555CBCFF] text-white font-bold py-3.5 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-base"
               >
                 Descubre el Poder de los Chatbots con n8n
               </Link>

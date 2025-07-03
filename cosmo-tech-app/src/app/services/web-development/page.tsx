@@ -29,12 +29,12 @@ export default function WebDevelopmentPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header Placeholder - Assuming a global header is present in layout.tsx */}
-      <header className="bg-card/80 backdrop-blur-md shadow-sm sticky top-0 z-40 border-b border-border">
-        <div className="container mx-auto px-6 py-3 flex justify-between items-center">
+      <header className="bg-white backdrop-blur-md shadow-sm sticky top-0 z-40">
+        <div className="container mx-auto px-6 py-4 md:py-6 flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold text-primary hover:text-primary-dark transition-colors duration-300">
             Cosmo<span className="text-secondary">Tech</span>
           </Link>
-          <Link href="/#contact" className="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-sm">
+          <Link href="/#contact" className="bg-[#555CBCFF] text-white font-semibold py-2 px-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-sm">
               Contáctanos
           </Link>
         </div>
@@ -82,7 +82,7 @@ export default function WebDevelopmentPage() {
               <h3 className="text-2xl md:text-3xl font-semibold text-center mb-10 md:mb-12 text-primary-dark animate-fade-in-up">Tecnologías que Dominamos</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
                 {technologies.map((tech) => (
-                  <TechLogo key={tech.name} name={tech.name} anDelay={tech.anDelay} />
+                  <TechLogo key={tech.name} src={tech.src} name={tech.name} anDelay={tech.anDelay} alt={''} />
                 ))}
               </div>
             </section>
@@ -90,7 +90,7 @@ export default function WebDevelopmentPage() {
             <section className="text-center mt-10 mb-8 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
               <Link
                 href="/#contact"
-                className="bg-accent hover:bg-accent-dark text-white font-bold py-3.5 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-base"
+                className="bg-[#555CBCFF] hover:bg-accent-dark text-white font-bold py-3.5 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-base"
               >
                 Solicitar Cotización de Desarrollo Web
               </Link>

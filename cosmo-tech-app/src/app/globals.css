@@ -1,66 +1,40 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
-  font-family: 'Inter', sans-serif;
-  @apply bg-background text-foreground; /* Updated to use new theme colors */
-}
 
 /* Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
 }
 
-/* Basic responsive typography - Consider moving to theme if more complex */
+/* Basic responsive typography */
 h1 {
-  @apply text-4xl font-bold md:text-5xl lg:text-6xl;
+  @apply text-4xl md:text-5xl lg:text-6xl;
 }
 
 h2 {
-  @apply text-3xl font-bold md:text-4xl;
+  @apply text-3xl md:text-4xl;
 }
 
 h3 {
-  @apply text-xl font-semibold md:text-2xl;
+  @apply text-xl md:text-2xl;
 }
 
-/* Custom scrollbar for light theme (optional) */
+/* Custom scrollbar (optional, for a more polished look) */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-neutral-200; /* Using new neutral color */
+  background: #1f2937; /* bg-gray-800 */
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary rounded-md; /* Using new primary color */
+  background: #8b5cf6; /* bg-purple-500 */
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary-dark; /* Using new primary-dark color */
-}
-
-/* Base for animations that will be triggered by JS or viewport visibility */
-.initial-hidden {
-  opacity: 0;
-}
-.fade-in-up-on-scroll {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-.slide-in-left-on-scroll {
-  animation: slideInLeft 0.6s ease-out forwards;
-}
-.slide-in-right-on-scroll {
-   animation: slideInRight 0.6s ease-out forwards; /* Assuming slideInRight is defined in tailwind.config.ts */
-}
-
-
-/* Utility for common hover effects */
-.hover-lift {
-  @apply transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl;
-}
-
-.card-hover-effect {
-  @apply transition-all duration-300 ease-in-out border border-transparent hover:shadow-lg hover:border-primary-light;
+  background: #7c3aed; /* bg-purple-600 */
 }

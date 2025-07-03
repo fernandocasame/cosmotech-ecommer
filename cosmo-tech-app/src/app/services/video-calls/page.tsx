@@ -4,7 +4,7 @@ import Image from 'next/image'; // Import Image
 // Placeholder for FeatureCard component
 const FeatureCard: React.FC<{ title: string, description: string, icon?: string, anDelay?: string }> = ({ title, description, icon, anDelay = "0s" }) => (
   <div
-    className="bg-card p-6 rounded-xl shadow-lg hover-lift animate-fade-in-up border border-border hover:border-primary-light"
+    className="bg-card p-6 rounded-xl shadow-lg hover-lift animate-fade-in-up hover:border-primary-light"
     style={{ animationDelay: anDelay }}
   >
     {icon && <div className="text-3xl text-primary mb-3">{icon}</div>}
@@ -26,12 +26,12 @@ export default function VideoCallsPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header Placeholder */}
-      <header className="bg-card/80 backdrop-blur-md shadow-sm sticky top-0 z-40 border-b border-border">
-        <div className="container mx-auto px-6 py-3 flex justify-between items-center">
+      <header className="bg-white backdrop-blur-md shadow-sm sticky top-0 z-40">
+        <div className="container mx-auto px-6 py-4 md:py-6 flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold text-primary hover:text-primary-dark transition-colors duration-300">
             Cosmo<span className="text-secondary">Tech</span>
           </Link>
-          <Link href="/#contact" className="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-sm">
+          <Link href="/#contact" className="bg-[#555CBCFF] text-white font-semibold py-2 px-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md text-sm">
               Contáctanos
           </Link>
         </div>
@@ -97,7 +97,7 @@ export default function VideoCallsPage() {
             <section className="text-center mt-12 md:mt-16 mb-8 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
               <Link
                 href="/#contact"
-                className="bg-accent hover:bg-accent-dark text-white font-bold py-3.5 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-base"
+                className="bg-[#555CBCFF] text-white font-bold py-3.5 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl text-base"
               >
                 Implementa Videollamadas en tu Empresa
               </Link>
