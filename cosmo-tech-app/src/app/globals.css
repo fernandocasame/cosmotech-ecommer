@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 body {
-  font-family: 'Inter', sans-serif; /* Example: Using a common sans-serif font */
+  font-family: 'Inter', sans-serif;
+  @apply bg-gray-50 text-gray-800; /* Light theme background and text */
 }
 
 /* Smooth scrolling for anchor links */
@@ -22,20 +23,39 @@ h3 {
   @apply text-xl md:text-2xl;
 }
 
-/* Custom scrollbar (optional, for a more polished look) */
+/* Custom scrollbar for light theme (optional) */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1f2937; /* bg-gray-800 */
+  background: #e5e7eb; /* bg-gray-200 */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #8b5cf6; /* bg-purple-500 */
-  border-radius: 4px;
+  background: #60a5fa; /* bg-blue-400 */
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #7c3aed; /* bg-purple-600 */
+  background: #3b82f6; /* bg-blue-500 */
+}
+
+/* Simple fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-on-scroll {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0; /* Start hidden, JS will add class to trigger */
+}
+
+/* Utility for animations - can be expanded */
+.transition-transform {
+  @apply transition-transform duration-300 ease-in-out;
+}
+.hover-lift {
+  @apply hover:-translate-y-1 hover:shadow-xl;
 }
