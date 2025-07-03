@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200.2 246.8" width="128" height="128">
+  <defs>
+    <linearGradient id="flutter_grad" x1="7.8%" y1="7.6%" x2="92.2%" y2="92.4%">
+      <stop offset="0%" stop-color="#02569B"/>
+      <stop offset="100%" stop-color="#027DFD"/>
+    </linearGradient>
+    <linearGradient id="flutter_grad_dark" x1="7.8%" y1="7.6%" x2="92.2%" y2="92.4%">
+      <stop offset="0%" stop-color="#014077"/>
+      <stop offset="100%" stop-color="#02569B"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#flutter_grad)" d="M122.0мер 0L0 122.0l37.4 37.4L159.4мер 37.4z"/>
+  <path fill="url(#flutter_grad_dark)" d="M122.0мер 0L74.8 47.3l37.4 37.4L159.4мер 37.4z"/>
+  <path fill="#40C4FF" d="M74.8 147.0l37.4 37.4 47.3-47.3-37.4-37.4z"/>
+  <path fill="#027DFD" d="M37.4 194.1l37.4 37.4L122.0мер 184.2l-37.4-37.4-9.9 9.9z"/>
+  <path fill="#40C4FF" d="M122.0мер 74.8l-37.4 37.4-9.9 9.9 37.4 37.4 47.3-47.3z"/>
+</svg>
