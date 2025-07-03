@@ -4,7 +4,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  @apply bg-gray-50 text-gray-800; /* Light theme background and text */
+  @apply bg-background text-foreground; /* Updated to use new theme colors */
 }
 
 /* Smooth scrolling for anchor links */
@@ -12,52 +12,57 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Basic responsive typography */
+/* Basic responsive typography - Consider moving to theme if more complex */
 h1 {
-  @apply text-4xl md:text-5xl lg:text-6xl;
+  @apply text-4xl font-bold md:text-5xl lg:text-6xl;
 }
 
 h2 {
-  @apply text-3xl md:text-4xl;
+  @apply text-3xl font-bold md:text-4xl;
 }
 
 h3 {
-  @apply text-xl md:text-2xl;
+  @apply text-xl font-semibold md:text-2xl;
 }
 
 /* Custom scrollbar for light theme (optional) */
 ::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #e5e7eb; /* bg-gray-200 */
+  @apply bg-neutral-200; /* Using new neutral color */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #60a5fa; /* bg-blue-400 */
-  border-radius: 5px;
+  @apply bg-primary rounded-md; /* Using new primary color */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3b82f6; /* bg-blue-500 */
+  @apply bg-primary-dark; /* Using new primary-dark color */
 }
 
-/* Simple fade-in animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Base for animations that will be triggered by JS or viewport visibility */
+.initial-hidden {
+  opacity: 0;
+}
+.fade-in-up-on-scroll {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+.slide-in-left-on-scroll {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+.slide-in-right-on-scroll {
+   animation: slideInRight 0.6s ease-out forwards; /* Assuming slideInRight is defined in tailwind.config.ts */
 }
 
-.animate-fade-in-on-scroll {
-  animation: fadeIn 0.8s ease-out forwards;
-  opacity: 0; /* Start hidden, JS will add class to trigger */
-}
 
-/* Utility for animations - can be expanded */
-.transition-transform {
-  @apply transition-transform duration-300 ease-in-out;
-}
+/* Utility for common hover effects */
 .hover-lift {
-  @apply hover:-translate-y-1 hover:shadow-xl;
+  @apply transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl;
+}
+
+.card-hover-effect {
+  @apply transition-all duration-300 ease-in-out border border-transparent hover:shadow-lg hover:border-primary-light;
 }
