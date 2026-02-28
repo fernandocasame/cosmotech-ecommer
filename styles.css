@@ -31,6 +31,7 @@ body {
     color:var(--text-primary);
     line-height:1.7;
     overflow-x:hidden;
+    max-width: 100vw;
     -webkit-font-smoothing:antialiased;
 }
 h1,h2,h3,h4 { font-family:'Plus Jakarta Sans',sans-serif; line-height:1.15; }
@@ -250,7 +251,7 @@ img { display:block; }
 }
 .hero-bg-gradient {
     position:absolute; top:-200px; left:50%; transform:translateX(-50%);
-    width:900px; height:900px; pointer-events:none; z-index:0;
+    width:100vw; max-width:900px; height:900px; pointer-events:none; z-index:0;
     background:radial-gradient(ellipse at center,rgba(var(--primary-rgb),.12) 0%,rgba(var(--primary-rgb),.04) 40%,transparent 70%);
 }
 .hero-container {
@@ -451,7 +452,7 @@ img { display:block; }
 
 /* FOOTER */
 .footer{background:var(--bg-secondary);border-top:1px solid rgba(var(--primary-rgb),.1);position:relative;z-index:1;padding:80px 0 32px;}
-.footer-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:1px;background:linear-gradient(90deg,transparent,rgba(var(--primary-rgb),.5),transparent);}
+.footer-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:100vw;max-width:600px;height:1px;background:linear-gradient(90deg,transparent,rgba(var(--primary-rgb),.5),transparent);}
 .footer-top{display:grid;grid-template-columns:1fr 2fr;gap:80px;margin-bottom:60px;}
 .footer-tagline{font-size:14px;color:var(--text-quaternary);margin:12px 0 24px;line-height:1.6;}
 .social-links{display:flex;gap:10px;}
@@ -490,8 +491,10 @@ img { display:block; }
 }
 @media(max-width:767px){
     .section-padding{padding:80px 0;}
-    .section-title{font-size:30px;text-align:center;}
+    .section-title{font-size:30px; text-align:center;}
+    
     /* Hero */
+    .hero-content{display:flex; flex-direction:column; align-items:center; text-align:center;}
     .hero-title{font-size:36px;text-align:center;}
     .hero-subtitle{text-align:center;margin-left:auto;margin-right:auto;}
     .hero-image-wrapper{width:280px;height:280px;}
@@ -500,36 +503,45 @@ img { display:block; }
     .stat-item{align-items:center;}
     .stat-number{font-size:26px;}
     .hero-badge{margin-left:auto;margin-right:auto;}
+    
     /* Nav */
     .nav-links{display:none;}
     .mobile-menu-toggle{display:flex;}
+    
     /* Services */
     .services-grid{grid-template-columns:1fr;}
     .service-card-flip{height:340px;}
+    
     /* Metrics */
     .metrics-grid{grid-template-columns:repeat(2,1fr);gap:14px;}
     .metric-number{font-size:36px;}
     .process-steps{flex-direction:column;align-items:center;gap:24px;}
     .process-step{text-align:center;flex-direction:column;align-items:center;max-width:280px;}
     .process-connector{display:none;}
+    
     /* About */
     .about-grid{grid-template-columns:1fr;gap:48px;}
-    .about-content{text-align:center;}
+    .about-content{display:flex; flex-direction:column; align-items:center; text-align:center;}
     .about-content .section-title{text-align:center;}
-    .about-content .section-label{display:flex;justify-content:center;}
+    .about-content .section-label{display:inline-flex;justify-content:center;}
     .about-text{text-align:center;}
-    .about-values{align-items:center;}
+    .about-values{align-items:center; width:100%;}
     .value-item{flex-direction:column;align-items:center;text-align:center;}
+    
     /* CTA */
     .form-row{grid-template-columns:1fr;}
     .cta-trust{flex-direction:column;gap:12px;align-items:center;}
+    
     /* Footer */
-    .footer-links{grid-template-columns:1fr 1fr;gap:24px;}
+    .footer-links{grid-template-columns:1fr;gap:32px;text-align:center;}
     .footer-bottom{flex-direction:column;gap:16px;text-align:center;}
-    .footer-brand{text-align:center;}
+    .footer-brand{display:flex; flex-direction:column; align-items:center; text-align:center;}
+    .footer-brand .nav-logo{justify-content:center;margin-bottom:12px;}
     .social-links{justify-content:center;}
+    
     /* Misc */
     .floating-badge{display:none;}
     .particle:nth-child(n+25){display:none;}
 }
+
 @media(min-width:1440px){.hero-image-wrapper{width:540px;height:540px;}}
