@@ -117,31 +117,7 @@ export function Hero() {
               </a>
             </motion.div>
 
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.5 }}
-              className="mt-16 flex items-center gap-10"
-            >
-              <div className="flex -space-x-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-12 h-12 rounded-full border-4 border-white dark:border-zinc-900 bg-zinc-200 dark:bg-zinc-800 overflow-hidden shadow-sm">
-                    <img src={`https://i.pravatar.cc/150?u=${i + 10}`} alt="User" className="w-full h-full object-cover" />
-                  </div>
-                ))}
-                <div className="w-12 h-12 rounded-full border-4 border-white dark:border-zinc-900 bg-brand-600 flex items-center justify-center text-white text-xs font-bold shadow-sm">
-                  +50
-                </div>
-              </div>
-              <div className="text-sm">
-                <p className="font-bold text-zinc-900 dark:text-zinc-100">Empresas confían en nosotros</p>
-                <div className="flex text-yellow-400">
-                  {[...Array(5)].map((_, i) => (
-                    <Target key={i} className="w-3 h-3 fill-current" />
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+
           </div>
 
           <motion.div 
