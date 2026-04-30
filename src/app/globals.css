@@ -1,26 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-50: #eff6ff;
-  --color-brand-100: #dbeafe;
-  --color-brand-200: #bfdbfe;
-  --color-brand-300: #93c5fd;
-  --color-brand-400: #60a5fa;
-  --color-brand-500: #3b82f6;
-  --color-brand-600: #2563eb;
-  --color-brand-700: #1d4ed8;
-  --color-brand-800: #1e40af;
-  --color-brand-900: #1e3a8a;
+  --color-brand-50: #f0f7ff;
+  --color-brand-100: #e0effe;
+  --color-brand-200: #bae0fd;
+  --color-brand-300: #7cc7fb;
+  --color-brand-400: #38a9f8;
+  --color-brand-500: #0e8ce9;
+  --color-brand-600: #026ec7;
+  --color-brand-700: #0358a1;
+  --color-brand-800: #074b85;
+  --color-brand-900: #0c406f;
 
-  --color-accent-500: #6366f1;
+  --color-accent-500: #8b5cf6;
+  --color-accent-600: #7c3aed;
 
-  --font-serif: var(--font-playfair), serif;
+  --font-serif: var(--font-outfit), sans-serif;
   --font-sans: var(--font-inter), sans-serif;
 }
 
 @layer base {
   body {
-    @apply bg-zinc-50 text-zinc-900;
+    @apply bg-white text-zinc-950 transition-colors duration-500;
+  }
+  
+  .dark body {
+    @apply bg-zinc-950 text-zinc-50;
   }
 }
 
@@ -37,8 +42,13 @@
   border: 1px solid rgba(255,255,255,0.2);
 }
 
+.dark .glass {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
 .dark-glass {
-  background: rgba(15, 23, 42, 0.7);
+  background: rgba(9, 9, 11, 0.8);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255,255,255,0.1);
@@ -47,3 +57,4 @@
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-accent-500;
 }
+

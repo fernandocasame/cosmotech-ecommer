@@ -29,13 +29,26 @@ export function Testimonials() {
   ];
 
   return (
-    <section className="py-24 bg-zinc-50" id="testimonios">
+    <section className="py-32 bg-zinc-50 dark:bg-zinc-950 transition-colors duration-500" id="testimonios">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-zinc-900 mb-6">
-            Líderes que <span className="italic text-brand-600 font-normal">confían</span> en nosotros
-          </h2>
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.span 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-brand-600 dark:text-brand-400 font-bold tracking-[0.2em] uppercase text-xs mb-4 block"
+          >
+            Voces del Éxito
+          </motion.span>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-serif text-[clamp(2rem,5vw,3.5rem)] font-black text-zinc-950 dark:text-white leading-[1.1]"
+          >
+            Líderes que <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-accent-600 dark:from-brand-400 dark:to-accent-400 font-medium">confían</span> en nuestra visión
+          </motion.h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -46,25 +59,26 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.15 }}
-              className="bg-white p-8 rounded-3xl shadow-sm border border-zinc-100 flex flex-col h-full relative"
+              whileHover={{ y: -5 }}
+              className="bg-white dark:bg-zinc-900 p-10 rounded-[2rem] shadow-sm border border-zinc-100 dark:border-white/5 flex flex-col h-full relative group transition-all duration-300"
             >
-              <Quote className="absolute top-8 right-8 w-10 h-10 text-zinc-100" />
+              <Quote className="absolute top-10 right-10 w-12 h-12 text-zinc-50 dark:text-white/5 group-hover:text-brand-500/10 transition-colors" />
               
-              <div className="flex gap-1 mb-6 text-yellow-400 text-sm">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              <div className="flex gap-1 mb-8 text-yellow-400 text-xs">
+                {[...Array(5)].map((_, i) => <span key={i}>★</span>)}
               </div>
               
-              <p className="text-zinc-600 mb-8 flex-grow leading-relaxed relative z-10">
+              <p className="text-zinc-500 dark:text-zinc-400 mb-10 flex-grow leading-relaxed font-light text-lg italic">
                 "{test.text}"
               </p>
               
-              <div className="flex items-center space-x-4 mt-auto">
-                <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${test.color} flex items-center justify-center text-white font-bold tracking-wider shadow-inner`}>
+              <div className="flex items-center space-x-5 mt-auto">
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${test.color} flex items-center justify-center text-white font-black tracking-wider shadow-lg shadow-brand-500/20`}>
                   {test.initials}
                 </div>
                 <div>
-                  <p className="font-bold text-zinc-900">{test.author}</p>
-                  <p className="text-sm text-zinc-500">{test.role}</p>
+                  <p className="font-bold text-zinc-950 dark:text-white text-lg tracking-tight">{test.author}</p>
+                  <p className="text-sm text-zinc-500 dark:text-zinc-400 font-medium uppercase tracking-widest text-[10px]">{test.role}</p>
                 </div>
               </div>
             </motion.div>
@@ -73,5 +87,6 @@ export function Testimonials() {
 
       </div>
     </section>
+
   );
 }
