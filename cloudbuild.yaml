@@ -36,3 +36,6 @@ images:
   - 'gcr.io/$PROJECT_ID/cosmotech-web:$COMMIT_SHA'
   - 'gcr.io/$PROJECT_ID/cosmotech-web:latest'
 
+options:
+  logging: CLOUD_LOGGING_ONLY
+
