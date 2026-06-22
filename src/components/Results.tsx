@@ -101,7 +101,7 @@ export function Results() {
                   className="w-[80px] h-[80px] rounded-2xl bg-white border border-slate-150 shadow-sm flex flex-col items-center justify-center gap-1 cursor-pointer hover:shadow-md transition-shadow"
                 >
                   <LogoAsterisk className="w-5 h-5 text-brand-500 animate-[spin_10s_linear_infinite]" />
-                  <span className="text-[9px] text-slate-500 font-bold">Softnow</span>
+                  <span className="text-[9px] text-slate-500 font-bold">SoftNow</span>
                 </motion.div>
 
                 <motion.div
@@ -133,7 +133,7 @@ export function Results() {
             </h2>
 
             <p className="text-slate-650 text-base md:text-lg mb-8 leading-relaxed max-w-xl">
-              Tus bases de datos, APIs y sistemas CRM necesitan sincronía. Softnow trabaja en segundo plano para leer, transformar y unificar cada flujo de datos en tu infraestructura. A diferencia de las integraciones manuales complejas, Softnow gestiona pipelines redundantes que protegen tu información y escalan automáticamente.
+              Tus bases de datos, APIs y sistemas CRM necesitan sincronía. SoftNow trabaja en segundo plano para leer, transformar y unificar cada flujo de datos en tu infraestructura. A diferencia de las integraciones manuales complejas, SoftNow gestiona pipelines redundantes que protegen tu información y escalan automáticamente.
             </p>
 
             <a

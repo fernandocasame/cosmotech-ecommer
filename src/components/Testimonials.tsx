@@ -6,7 +6,7 @@ import { Star } from "lucide-react";
 export function Testimonials() {
   const testimonials = [
     {
-      text: "Softnow transformó completamente nuestra infraestructura y plataforma web. Su equipo de ingeniería resolvió cuellos de botella críticos, triplicando nuestra velocidad de procesamiento.",
+      text: "SoftNow transformó completamente nuestra infraestructura y plataforma web. Su equipo de ingeniería resolvió cuellos de botella críticos, triplicando nuestra velocidad de procesamiento.",
       author: "María Rodríguez",
       role: "CTO · TechVision",
       initials: "MR",

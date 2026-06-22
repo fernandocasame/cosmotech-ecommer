@@ -14,7 +14,7 @@ export function Footer() {
               <LogoAsterisk className="w-6 h-6 transition-transform duration-300 group-hover:rotate-45" />
               <div className="flex flex-col">
                 <span className="font-serif text-lg font-bold text-slate-900 leading-none tracking-tight">
-                  Softnow
+                  SoftNow
                 </span>
                 <span className="text-[8px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-1">
                   Digital Engineering
@@ -92,7 +92,7 @@ export function Footer() {
 
         {/* Footer Base */}
         <div className="border-t border-slate-200/60 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 tracking-wider">
-          <p className="mb-4 md:mb-0">© {new Date().getFullYear()} Softnow. Todos los derechos reservados.</p>
+          <p className="mb-4 md:mb-0">© {new Date().getFullYear()} SoftNow. Todos los derechos reservados.</p>
           <div className="flex space-x-6 uppercase text-[9px] font-bold">
             <a href="#" className="hover:text-slate-950 transition-colors">Privacidad</a>
             <a href="#" className="hover:text-slate-950 transition-colors">Términos</a>

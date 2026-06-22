@@ -4,14 +4,14 @@ steps:
     args: 
       - 'build'
       - '-t'
-      - 'gcr.io/$PROJECT_ID/Softnow-web:$COMMIT_SHA'
+      - 'gcr.io/$PROJECT_ID/SoftNow-web:$COMMIT_SHA'
       - '-t'
-      - 'gcr.io/$PROJECT_ID/Softnow-web:latest'
+      - 'gcr.io/$PROJECT_ID/SoftNow-web:latest'
       - '.'
 
   # 2. Subir la imagen a Google Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/Softnow-web', '--all-tags']
+    args: ['push', 'gcr.io/$PROJECT_ID/SoftNow-web', '--all-tags']
 
   # 3. Desplegar la imagen en Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -19,9 +19,9 @@ steps:
     args:
       - 'run'
       - 'deploy'
-      - 'Softnow-web'
+      - 'SoftNow-web'
       - '--image'
-      - 'gcr.io/$PROJECT_ID/Softnow-web:$COMMIT_SHA'
+      - 'gcr.io/$PROJECT_ID/SoftNow-web:$COMMIT_SHA'
       - '--region'
       - 'us-central1'
       - '--platform'
@@ -33,8 +33,8 @@ steps:
       - '1'
 
 images:
-  - 'gcr.io/$PROJECT_ID/Softnow-web:$COMMIT_SHA'
-  - 'gcr.io/$PROJECT_ID/Softnow-web:latest'
+  - 'gcr.io/$PROJECT_ID/SoftNow-web:$COMMIT_SHA'
+  - 'gcr.io/$PROJECT_ID/SoftNow-web:latest'
 
 options:
   logging: CLOUD_LOGGING_ONLY

@@ -35,7 +35,7 @@ export function ContactCta() {
               </h2>
 
               <p className="text-slate-600 text-base md:text-lg mb-10 leading-relaxed max-w-lg font-normal">
-                Únete a las empresas que lideran el mercado digital de la mano de Softnow. Solicita una consultoría de arquitectura gratuita y diseñemos tu roadmap tecnológico.
+                Únete a las empresas que lideran el mercado digital de la mano de SoftNow. Solicita una consultoría de arquitectura gratuita y diseñemos tu roadmap tecnológico.
               </p>
 
               <div className="space-y-6">

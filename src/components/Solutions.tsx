@@ -28,11 +28,11 @@ export function Solutions() {
 
             <h2 className="text-[clamp(2rem,5vw,3.2rem)] font-bold text-slate-900 mb-8 leading-tight tracking-tight font-serif">
               Tus equipos de desarrollo son excelentes, <br className="hidden md:inline" />
-              <span className="gradient-text">Softnow los hace aún mejores</span>
+              <span className="gradient-text">SoftNow los hace aún mejores</span>
             </h2>
 
             <p className="text-slate-650 text-base md:text-lg mb-8 leading-relaxed max-w-xl">
-              Habilitamos a tus líderes técnicos y desarrolladores para construir y desplegar plataformas críticas sin fricciones. Softnow automatiza la sincronización de APIs, despliegues en la nube e inteligencia artificial a medida, asegurando que tu código corra de forma óptima desde el día uno.
+              Habilitamos a tus líderes técnicos y desarrolladores para construir y desplegar plataformas críticas sin fricciones. SoftNow automatiza la sincronización de APIs, despliegues en la nube e inteligencia artificial a medida, asegurando que tu código corra de forma óptima desde el día uno.
             </p>
 
             {/* List of benefits */}
@@ -75,7 +75,7 @@ export function Solutions() {
             <div className="relative w-full max-w-[360px] md:max-w-[400px] aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/80 shadow-2xl">
               <Image
                 src="/developer_hero.png"
-                alt="Softnow developer leading project"
+                alt="SoftNow developer leading project"
                 fill
                 sizes="(max-w-750px) 100vw, 400px"
                 className="object-cover object-center"

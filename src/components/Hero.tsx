@@ -72,7 +72,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-base md:text-lg text-slate-600 mb-10 max-w-2xl leading-relaxed"
           >
-            En <span className="font-semibold text-slate-900">Softnow</span> diseñamos y desarrollamos
+            En <span className="font-semibold text-slate-900">SoftNow</span> diseñamos y desarrollamos
             plataformas a medida, integraciones de inteligencia artificial y arquitecturas cloud de alto rendimiento para escalar tu negocio.
           </motion.p>
 
@@ -184,7 +184,7 @@ export function Hero() {
             transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 0.2 }}
             className="absolute right-[5%] bottom-[12%] md:right-[8%] md:bottom-[15%] glass-card rounded-2xl p-4 w-44 md:w-48 shadow-xl border border-white/60 hover:shadow-2xl hover:bg-white/80 transition-all"
           >
-            <span className="text-xs text-slate-400 font-semibold uppercase tracking-wider block mb-2">Ingenieros Softnow</span>
+            <span className="text-xs text-slate-400 font-semibold uppercase tracking-wider block mb-2">Ingenieros SoftNow</span>
             <div className="flex items-center gap-2">
               <div className="flex -space-x-2">
                 <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-brand-300 to-accent-300 border border-white flex items-center justify-center text-[9px] font-bold text-slate-800">JS</div>

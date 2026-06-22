@@ -16,17 +16,17 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Softnow — Innovación & Desarrollo de Software de Élite",
+  title: "SoftNow — Innovación & Desarrollo de Software de Élite",
   description: "Diseñamos y desarrollamos productos digitales de alto rendimiento. Plataformas a medida, automatizaciones e inteligencia artificial para escalar tu negocio.",
-  metadataBase: new URL("https://Softnow.info"),
+  metadataBase: new URL("https://SoftNow.info"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Softnow — Innovación & Desarrollo de Software de Élite",
+    title: "SoftNow — Innovación & Desarrollo de Software de Élite",
     description: "Diseñamos y desarrollamos productos digitales de alto rendimiento. Plataformas a medida, automatizaciones e inteligencia artificial para escalar tu negocio.",
-    url: "https://Softnow.info",
-    siteName: "Softnow",
+    url: "https://SoftNow.info",
+    siteName: "SoftNow",
     locale: "es_ES",
     type: "website",
   }

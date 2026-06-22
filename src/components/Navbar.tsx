@@ -76,7 +76,7 @@ export function Navbar() {
           <a href="#" className="flex items-center gap-2.5 group">
             <LogoAsterisk className="w-6 h-6 transition-transform duration-300 group-hover:rotate-45" />
             <span className="text-xl font-bold text-slate-900 tracking-tight">
-              Softnow
+              SoftNow
             </span>
           </a>
 
