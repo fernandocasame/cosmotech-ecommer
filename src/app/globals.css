@@ -1,31 +1,57 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-50: #f0f7ff;
-  --color-brand-100: #e0effe;
-  --color-brand-200: #bae0fd;
-  --color-brand-300: #7cc7fb;
-  --color-brand-400: #38a9f8;
-  --color-brand-500: #0e8ce9;
-  --color-brand-600: #026ec7;
-  --color-brand-700: #0358a1;
-  --color-brand-800: #074b85;
-  --color-brand-900: #0c406f;
+  /* Brand palette — Sky Blues & Royal Navy */
+  --color-brand-50: #f0f9ff;
+  --color-brand-100: #e0f2fe;
+  --color-brand-200: #bae6fd;
+  --color-brand-300: #7dd3fc;
+  --color-brand-400: #38bdf8;
+  --color-brand-500: #0ea5e9; /* Sky Blue */
+  --color-brand-600: #0284c7;
+  --color-brand-700: #0369a1;
+  --color-brand-800: #075985;
+  --color-brand-900: #0c4a6e;
+  --color-brand-950: #031c30;
 
-  --color-accent-500: #8b5cf6;
-  --color-accent-600: #7c3aed;
+  /* Accent — Emerald Greens */
+  --color-accent-50: #f0fdf4;
+  --color-accent-100: #dcfce7;
+  --color-accent-200: #bbf7d0;
+  --color-accent-300: #86efac;
+  --color-accent-400: #4ade80;
+  --color-accent-500: #22c55e; /* Vibrant Green */
+  --color-accent-600: #16a34a;
+  --color-accent-700: #15803d;
 
-  --font-serif: var(--font-outfit), sans-serif;
-  --font-sans: var(--font-inter), sans-serif;
+  /* Surface Colors for Light Theme */
+  --color-surface-50: #f8fafc;
+  --color-surface-100: #f1f5f9;
+  --color-surface-200: #e2e8f0;
+  --color-surface-900: #0f172a; /* Deep Navy for typography */
+  --color-surface-950: #020617;
+
+  --font-serif: var(--font-outfit), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
 }
 
 @layer base {
-  body {
-    @apply bg-white text-zinc-950 transition-colors duration-500;
+  html {
+    color-scheme: light !important;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  
-  .dark body {
-    @apply bg-zinc-950 text-zinc-50;
+
+  body {
+    @apply text-surface-900 font-sans antialiased overflow-x-hidden;
+    background-color: #ffffff !important;
+    background-image: radial-gradient(circle at 50% -10%, #e0f2fe 0%, #f0fdf4 30%, #ffffff 65%) !important;
+    color: #0f172a !important;
+  }
+
+  ::selection {
+    background: rgba(34, 197, 94, 0.2);
   }
 }
 
@@ -35,26 +61,79 @@
   }
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.2);
+/* ── Light Glass Card (adiyo style) ──────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 
+    0 10px 30px -10px rgba(15, 23, 42, 0.05), 
+    0 1px 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 50px 100px -20px rgba(15, 23, 42, 0.02);
 }
 
-.dark .glass {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255,255,255,0.05);
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    0 20px 40px -12px rgba(15, 23, 42, 0.08), 
+    0 1px 1px 0 rgba(255, 255, 255, 1) inset,
+    0 50px 100px -20px rgba(15, 23, 42, 0.03);
 }
 
-.dark-glass {
-  background: rgba(9, 9, 11, 0.8);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.1);
+/* ── Glowing Blue & Green Spots ─────────────────── */
+.glow-spot-blue {
+  @apply absolute -z-10 rounded-full blur-[100px] opacity-40 pointer-events-none;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.2) 0%, transparent 70%);
 }
 
+.glow-spot-green {
+  @apply absolute -z-10 rounded-full blur-[100px] opacity-35 pointer-events-none;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.15) 0%, transparent 70%);
+}
+
+/* ── Gradient Text ────────────────────────────── */
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-accent-500;
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(135deg, #0284c7, #22c55e); /* Sky Blue to Emerald Green */
+}
+
+.gradient-text-cool {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(135deg, #0f172a, #0284c7, #16a34a);
+}
+
+/* ── Noise Texture Overlay ─────────────────────── */
+.noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.015'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Dot Grid Pattern (Subtle) ─────────────────── */
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ── Active Line Flow Animation (Data Pipelines) ──── */
+@keyframes line-flow {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+.animate-line-flow {
+  stroke-dasharray: 6 6;
+  animation: line-flow 1.2s linear infinite;
+}
+
+.animate-line-flow-reverse {
+  stroke-dasharray: 6 6;
+  animation: line-flow 1.2s linear infinite reverse;
 }
 

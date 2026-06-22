@@ -16,8 +16,20 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "CosmoTech — Transformamos ideas en experiencias digitales épicas",
-  description: "Agencia de marketing digital de élite. Elevamos tu marca al siguiente nivel.",
+  title: "Softnow — Innovación & Desarrollo de Software de Élite",
+  description: "Diseñamos y desarrollamos productos digitales de alto rendimiento. Plataformas a medida, automatizaciones e inteligencia artificial para escalar tu negocio.",
+  metadataBase: new URL("https://Softnow.info"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Softnow — Innovación & Desarrollo de Software de Élite",
+    description: "Diseñamos y desarrollamos productos digitales de alto rendimiento. Plataformas a medida, automatizaciones e inteligencia artificial para escalar tu negocio.",
+    url: "https://Softnow.info",
+    siteName: "Softnow",
+    locale: "es_ES",
+    type: "website",
+  }
 };
 
 export default function RootLayout({
@@ -31,7 +43,7 @@ export default function RootLayout({
         className={clsx(
           inter.variable,
           outfit.variable,
-          "antialiased bg-gray-50 text-gray-900 font-sans selection:bg-indigo-500/30"
+          "antialiased font-sans"
         )}
       >
         {children}

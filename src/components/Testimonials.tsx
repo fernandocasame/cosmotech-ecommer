@@ -1,92 +1,123 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
+import { Star } from "lucide-react";
 
 export function Testimonials() {
   const testimonials = [
     {
-      text: "CosmoTech transformó completamente nuestra presencia digital. En solo 3 meses triplicamos nuestro tráfico orgánico y las ventas aumentaron un 240%.",
+      text: "Softnow transformó completamente nuestra infraestructura y plataforma web. Su equipo de ingeniería resolvió cuellos de botella críticos, triplicando nuestra velocidad de procesamiento.",
       author: "María Rodríguez",
-      role: "CEO · TechVision",
+      role: "CTO · TechVision",
       initials: "MR",
-      color: "from-blue-500 to-indigo-500"
+      color: "text-brand-700 bg-brand-50 border-brand-100"
     },
     {
-      text: "No solo entregan resultados extraordinarios, sino que se convierten en un verdadero socio estratégico. Su enfoque data-driven es impresionante. Los mejores del sector.",
+      text: "No solo escriben código limpio, sino que entienden la lógica del negocio. La automatización de procesos con IA que implementaron nos ahorró cientos de horas operativas al mes.",
       author: "Carlos López",
       role: "Fundador · NovaCorp",
       initials: "CL",
-      color: "from-sky-400 to-blue-500"
+      color: "text-emerald-700 bg-emerald-50 border-emerald-100"
     },
     {
-      text: "Las campañas de Google Ads que gestionan tienen un ROI que no había visto con ninguna otra agencia. Profesionales de otro nivel, resultados al siguiente nivel.",
+      text: "Las soluciones de software a medida y la migración cloud que lideraron corren de forma impecable. Un nivel técnico excepcional y un soporte que realmente responde.",
       author: "Andrea Martínez",
-      role: "Directora · EliteMedia",
+      role: "Directora de Producto · EliteMedia",
       initials: "AM",
-      color: "from-indigo-500 to-purple-500"
+      color: "text-slate-800 bg-slate-100 border-slate-200/60"
     }
   ];
 
   return (
-    <section className="py-32 bg-zinc-50 dark:bg-zinc-950 transition-colors duration-500" id="testimonios">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+    <section className="py-24 relative overflow-hidden" id="testimonios">
+      {/* Background Soft Glows */}
+      <div className="glow-spot-green w-[600px] h-[300px] bottom-0 left-1/2 -translate-x-1/2" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-brand-600 dark:text-brand-400 font-bold tracking-[0.2em] uppercase text-xs mb-4 block"
+            className="inline-block text-brand-600 font-bold tracking-[0.2em] uppercase text-[10px] mb-4 bg-brand-50 px-3 py-1 rounded-full border border-brand-100"
           >
-            Voces del Éxito
+            Casos de Éxito
           </motion.span>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-serif text-[clamp(2rem,5vw,3.5rem)] font-black text-zinc-950 dark:text-white leading-[1.1]"
+            className="text-[clamp(1.8rem,4.5vw,3rem)] font-bold text-slate-900 leading-tight tracking-tight font-serif"
           >
-            Líderes que <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-accent-600 dark:from-brand-400 dark:to-accent-400 font-medium">confían</span> en nuestra visión
+            Líderes que aceleran con <span className="gradient-text">nuestra ingeniería</span>
           </motion.h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Testimonials Grid with Staggered Spring Animation */}
+        <motion.div
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.12
+              }
+            }
+          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
           {testimonials.map((test, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.15 }}
-              whileHover={{ y: -5 }}
-              className="bg-white dark:bg-zinc-900 p-10 rounded-[2rem] shadow-sm border border-zinc-100 dark:border-white/5 flex flex-col h-full relative group transition-all duration-300"
+              variants={{
+                hidden: { opacity: 0, y: 35 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    type: "spring",
+                    stiffness: 85,
+                    damping: 14
+                  }
+                }
+              }}
+              whileHover={{
+                y: -6,
+                scale: 1.01,
+                boxShadow: "0 20px 40px -15px rgba(15, 23, 42, 0.08)"
+              }}
+              className="glass-card p-8 md:p-10 rounded-3xl flex flex-col h-full relative group transition-all cursor-pointer"
             >
-              <Quote className="absolute top-10 right-10 w-12 h-12 text-zinc-50 dark:text-white/5 group-hover:text-brand-500/10 transition-colors" />
-              
-              <div className="flex gap-1 mb-8 text-yellow-400 text-xs">
-                {[...Array(5)].map((_, i) => <span key={i}>★</span>)}
+              {/* Stars */}
+              <div className="flex gap-1 mb-8">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-emerald-400 text-emerald-450" />
+                ))}
               </div>
-              
-              <p className="text-zinc-500 dark:text-zinc-400 mb-10 flex-grow leading-relaxed font-light text-lg italic">
-                "{test.text}"
+
+              {/* Quote */}
+              <p className="text-slate-650 mb-10 flex-grow leading-relaxed text-sm md:text-[14.5px] font-normal">
+                &ldquo;{test.text}&rdquo;
               </p>
-              
-              <div className="flex items-center space-x-5 mt-auto">
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${test.color} flex items-center justify-center text-white font-black tracking-wider shadow-lg shadow-brand-500/20`}>
+
+              {/* Author */}
+              <div className="flex items-center space-x-4 mt-auto pt-6 border-t border-slate-200/50">
+                <div className={`w-10 h-10 rounded-full border ${test.color} flex items-center justify-center text-sm font-bold shadow-sm group-hover:scale-105 transition-transform`}>
                   {test.initials}
                 </div>
                 <div>
-                  <p className="font-bold text-zinc-950 dark:text-white text-lg tracking-tight">{test.author}</p>
-                  <p className="text-sm text-zinc-500 dark:text-zinc-400 font-medium uppercase tracking-widest text-[10px]">{test.role}</p>
+                  <p className="font-bold text-slate-900 text-sm leading-tight">{test.author}</p>
+                  <p className="text-[10px] text-slate-455 font-bold uppercase tracking-wider mt-1">{test.role}</p>
                 </div>
               </div>
             </motion.div>
           ))}
-        </div>
-
+        </motion.div>
       </div>
     </section>
-
   );
 }
